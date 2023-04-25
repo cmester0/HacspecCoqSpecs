@@ -1,0 +1,22 @@
+opam-version: "2.0"
+name: "coq-hacspec"
+version: "dev"
+synopsis: "Hacspec coq library"
+maintainer: "Lasse Letager Hansen <letager@cs.au.dk>"
+authors: ["Lasse Letager Hansen <letager@cs.au.dk>"]
+homepage: "https://github.com/hacspec/hacspec"
+bug-reports: "https://github.com/hacspec/hacspec/issues"
+depends: [
+  "coq-compcert" {>= "3.12"}
+  "coq-coqprime" {>= "1.2.0"}
+  "coq-quickchick" {>= "1.6.4"}
+  "coq" {>= "8.16.1"}
+]
+build: [
+  ["coq_makefile" "-f" "_CoqProject" "-o" "Makefile"]
+  [make "clean"]
+  [make "-j%{jobs}%"]
+]
+install: [
+  [make "install"]
+]

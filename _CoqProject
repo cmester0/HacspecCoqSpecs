@@ -1,3 +1,9 @@
+-R src Hacspec
+
+src/MachineIntegers.v
+src/Hacspec_Lib.v
+src/QuickChickLib.v
+
 -R . Examples
 -arg -w
 -arg all
